@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me!</title>
+    <link rel="stylesheet" href="/static/contact.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init({
+                publicKey: "GxyrTmWioV1P0tf5c",
+            });
+        })();
+    </script>
+    <script>
+        function SendEmail(event) {
+            event.preventDefault();
+
+            let params = {
+                name: document.getElementById("name").value,
+                email: document.getElementById("emailID").value,
+                message: document.getElementById("message").value
+            }
+            emailjs.send("service_g61daxa", "template_39xpk1m", params)
+                .then(function(response) {
+                    console.log('SUCCESS!', response.status, response.text);
+                    alert("Email has been sent successfully!");
+
+                    document.getElementById("contactForm").reset();
+                }, function(error) {
+                    console.log('FAILED...', error);
+                    alert("Failed to send email. Please try again.");
+                });
+        };
+    </script>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href=""><img src="/assets/logo.svg" alt=""
+                        style="height: 2rem; width: 2rem; position: absolute; bottom: 1;"></a></li>
+            <li><a href="/templates/index.html" class="hover-underline">Home</a></li>
+            <li><a href="/templates/games.html" class="hover-underline">Other Games</a></li>
+            <li><a href="/templates/about.html" class="hover-underline">About</a></li>
+            <li><a href=""><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                        version="1.1" width="28" height="28" viewBox="0 0 256 256" xml:space="preserve">
+                        <g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;"
+                            transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)">
+                            <path
+                                d="M 87.823 60.7 c -0.463 -0.423 -1.142 -0.506 -1.695 -0.214 c -15.834 8.398 -35.266 2.812 -44.232 -12.718 c -8.966 -15.53 -4.09 -35.149 11.101 -44.665 c 0.531 -0.332 0.796 -0.963 0.661 -1.574 c -0.134 -0.612 -0.638 -1.074 -1.259 -1.153 c -9.843 -1.265 -19.59 0.692 -28.193 5.66 C 13.8 12.041 6.356 21.743 3.246 33.35 S 1.732 57.08 7.741 67.487 c 6.008 10.407 15.709 17.851 27.316 20.961 C 38.933 89.486 42.866 90 46.774 90 c 7.795 0 15.489 -2.044 22.42 -6.046 c 8.601 -4.966 15.171 -12.43 18.997 -21.586 C 88.433 61.79 88.285 61.123 87.823 60.7 z"
+                                style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;"
+                                transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+                        </g>
+                    </svg></a></li>
+        </ul>
+    </nav>
+
+    <div class="heading">
+        <h1>Let us connect!</h1>
+        <h1>Fill in the form below</h1>
+    </div>
+    <div class="form-container">
+        <form id="ContactForm" onsubmit="SendEmail(event)">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" placeholder="Enter Your Name" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="emailID">Email:</label>
+                <input type="email" placeholder="Enter Your Email-id" id="emailID" name="emailID" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message:</label>
+                <textarea placeholder="Send Me a Message!" rows="5" id="message" name="message" required>
+                </textarea>
+            </div>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+
+</body>
+
+</html>

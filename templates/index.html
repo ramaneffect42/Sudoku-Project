@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudoku Project</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href=""><img src="/assets/logo.svg" alt=""
+                        style="height: 2rem; width: 2rem; position: absolute; bottom: 1;"></a></li>
+            <li><a href="/templates/about.html" class="hover-underline">About</a></li>
+            <li><a href="/templates/games.html" class="hover-underline">Other Games</a></li>
+            <li><a href="/templates/contact.html" class="hover-underline">Contact</a></li>
+            <li><a href=""><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                        version="1.1" width="28" height="28" viewBox="0 0 256 256" xml:space="preserve">
+                        <g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;"
+                            transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)">
+                            <path
+                                d="M 87.823 60.7 c -0.463 -0.423 -1.142 -0.506 -1.695 -0.214 c -15.834 8.398 -35.266 2.812 -44.232 -12.718 c -8.966 -15.53 -4.09 -35.149 11.101 -44.665 c 0.531 -0.332 0.796 -0.963 0.661 -1.574 c -0.134 -0.612 -0.638 -1.074 -1.259 -1.153 c -9.843 -1.265 -19.59 0.692 -28.193 5.66 C 13.8 12.041 6.356 21.743 3.246 33.35 S 1.732 57.08 7.741 67.487 c 6.008 10.407 15.709 17.851 27.316 20.961 C 38.933 89.486 42.866 90 46.774 90 c 7.795 0 15.489 -2.044 22.42 -6.046 c 8.601 -4.966 15.171 -12.43 18.997 -21.586 C 88.433 61.79 88.285 61.123 87.823 60.7 z"
+                                style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;"
+                                transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+                        </g>
+                    </svg></a></li>
+        </ul>
+    </nav>
+    <div class="bodyContent"> 
+        <div class="finalFinalContainer">
+            <div class="heading">
+                <h1>Sudoku</h1>
+            </div>
+            <div class="finalContainer"> <!-- This container is for the entire sudoku grid all together. -->
+                <div class="containerMaxMax">
+                    <!--This container is for the outer three boxes of 9 in the first row of sudoku-->
+                    <div class="containerMax">
+                        <!--this container is  to contain the nine individual numbers inside the individual bigger box. -->
+                        <div class="container">
+                            <!--this container is for the first row of the previous/parent container. it contains 1 2 and 3 for now.-->
+                            <div class="box" id="box1"> <!--this division is for holding the numbers used in sudoku.-->
+                                1
+                            </div>
+                            <div class="box" id="box2">
+                                2
+                            </div>
+                            <div class="box" id="box3">
+                                3
+                            </div>
+                        </div>
+                        <div class="container">
+                            <div class="box" id="box4">
+                                4
+                            </div>
+                            <div class="box" id="box5">
+                                5
+                            </div>
+                            <div class="box" id="box6">
+                                6
+                            </div>
+                        </div>
+                        <div class="container">
+                            <div class="box" id="box7">
+                                7
+                            </div>
+                            <div class="box" id="box8">
+                                8
+                            </div>
+                            <div class="box" id="box9">
+                                9
+                            </div>
+                        </div>
+                    </div>
+                    <div class="containerMax">
+                        <div class="container">
+                            <div class="box" id="box1">
+                                1
+                            </div>
+                            <div class="box" id="box2">
+                                2
+                            </div>
+                            <div class="box" id="box3">
+                                3
+                            </div>
+                        </div>
+                        <div class="container">
+                            <div class="box" id="box4">
+                                4
+                            </div>
+                            <div class="box" id="box5">
+                                5
+                            </div>
+                            <div class="box" id="box6">
+                                6
+                            </div>
+                        </div>
+                        <div class="container">
+                            <div class="box" id="box7">
+                                7
+                            </div>
+                            <div class="box" id="box8">
+                                8
+                            </div>
+                            <div class="box" id="box9">
+                                9
+                            </div>
+                        </div>
+                    </div>
+                    <div class="containerMax">
+                        <div class="container">
+                            <div class="box" id="box1">
+                                1
+                            </div>
+                            <div class="box" id="box2">
+                                2
+                            </div>
+                            <div class="box" id="box3">
+                                3
+                            </div>
+                        </div>
+                        <div class="container">
+                            <div class="box" id="box4">
+                                4
+                            </div>
+                            <div class="box" id="box5">
+                                5
+                            </div>
+                            <div class="box" id="box6">
+                                6
+                            </div>
+                        </div>
+                        <div class="container">
+                            <div class="box" id="box7">
+                                7
+                            </div>
+                            <div class="box" id="box8">
+                                8
+                            </div>
+                            <div class="box" id="box9">
+                                9
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="containerMaxMax">
+                    <div class="containerMax">
+                        <div class="container">
+                            <div class="box" id="box1">
+                                1
+                            </div>
+                            <div class="box" id="box2">
+                                2
+                            </div>
+                            <div class="box" id="box3">
+                                3
+                            </div>
+                        </div>
+                        <div class="container">
+                            <div class="box" id="box4">
+                                4
+                            </div>
+                            <div class="box" id="box5">
+                                5
+                            </div>
+                            <div class="box" id="box6">
+                                6
+                            </div>
+                        </div>
+                        <div class="container">
+                            <div class="box" id="box7">
+                                7
+                            </div>
+                            <div class="box" id="box8">
+                                8
+                            </div>
+                            <div class="box" id="box9">
+                                9
+                            </div>
+                        </div>
+                    </div>
+                    <div class="containerMax">
+                        <div class="container">
+                            <div class="box" id="box1">
+                                1
+                            </div>
+                            <div class="box" id="box2">
+                                2
+                            </div>
+                            <div class="box" id="box3">
+                                3
+                            </div>
+                        </div>
+                        <div class="container">
+                            <div class="box" id="box4">
+                                4
+                            </div>
+                            <div class="box" id="box5">
+                                5
+                            </div>
+                            <div class="box" id="box6">
+                                6
+                            </div>
+                        </div>
+                        <div class="container">
+                            <div class="box" id="box7">
+                                7
+                            </div>
+                            <div class="box" id="box8">
+                                8
+                            </div>
+                            <div class="box" id="box9">
+                                9
+                            </div>
+                        </div>
+                    </div>
+                    <div class="containerMax">
+                        <div class="container">
+                            <div class="box" id="box1">
+                                1
+                            </div>
+                            <div class="box" id="box2">
+                                2
+                            </div>
+                            <div class="box" id="box3">
+                                3
+                            </div>
+                        </div>
+                        <div class="container">
+                            <div class="box" id="box4">
+                                4
+                            </div>
+                            <div class="box" id="box5">
+                                5
+                            </div>
+                            <div class="box" id="box6">
+                                6
+                            </div>
+                        </div>
+                        <div class="container">
+                            <div class="box" id="box7">
+                                7
+                            </div>
+                            <div class="box" id="box8">
+                                8
+                            </div>
+                            <div class="box" id="box9">
+                                9
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="containerMaxMax">
+                    <div class="containerMax">
+                        <div class="container">
+                            <div class="box" id="box1">
+                                1
+                            </div>
+                            <div class="box" id="box2">
+                                2
+                            </div>
+                            <div class="box" id="box3">
+                                3
+                            </div>
+                        </div>
+                        <div class="container">
+                            <div class="box" id="box4">
+                                4
+                            </div>
+                            <div class="box" id="box5">
+                                5
+                            </div>
+                            <div class="box" id="box6">
+                                6
+                            </div>
+                        </div>
+                        <div class="container">
+                            <div class="box" id="box7">
+                                7
+                            </div>
+                            <div class="box" id="box8">
+                                8
+                            </div>
+                            <div class="box" id="box9">
+                                9
+                            </div>
+                        </div>
+                    </div>
+                    <div class="containerMax">
+                        <div class="container">
+                            <div class="box" id="box1">
+                                1
+                            </div>
+                            <div class="box" id="box2">
+                                2
+                            </div>
+                            <div class="box" id="box3">
+                                3
+                            </div>
+                        </div>
+                        <div class="container">
+                            <div class="box" id="box4">
+                                4
+                            </div>
+                            <div class="box" id="box5">
+                                5
+                            </div>
+                            <div class="box" id="box6">
+                                6
+                            </div>
+                        </div>
+                        <div class="container">
+                            <div class="box" id="box7">
+                                7
+                            </div>
+                            <div class="box" id="box8">
+                                8
+                            </div>
+                            <div class="box" id="box9">
+                                9
+                            </div>
+                        </div>
+                    </div>
+                    <div class="containerMax">
+                        <div class="container">
+                            <div class="box" id="box1">
+                                1
+                            </div>
+                            <div class="box" id="box2">
+                                2
+                            </div>
+                            <div class="box" id="box3">
+                                3
+                            </div>
+                        </div>
+                        <div class="container">
+                            <div class="box" id="box4">
+                                4
+                            </div>
+                            <div class="box" id="box5">
+                                5
+                            </div>
+                            <div class="box" id="box6">
+                                6
+                            </div>
+                        </div>
+                        <div class="container">
+                            <div class="box" id="box7">
+                                7
+                            </div>
+                            <div class="box" id="box8">
+                                8
+                            </div>
+                            <div class="box" id="box9">
+                                9
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="rules-section">
+            <div class="rules">
+                <h1>What is Sudoku? </h1>
+                <p>Sudoku (japanese: 数独, romanized: sūdoku, lit.
+                    'digit-single'; originally called Number Place)
+                    is a logic-based, combinatorial number-placement puzzle.
+                    In classic Sudoku, the objective is to fill a 9 × 9 grid with digits so that each column, each row,
+                    and each of the nine 3 × 3 subgrids that compose the grid (also called "boxes", "blocks", or
+                    "regions")
+                    contains all of the digits from 1 to 9. The puzzle setter provides a partially completed grid,
+                    which for a well-posed puzzle has a single solution.</p>
+            </div>
+            <div class="rules">
+                <h1>Rules for Sudoku:</h1>
+                <p>Here are the basic rules of sudoku</p>
+                <ol>
+                    <li>Complete the grid: The goal is to fill a 9x9 grid with digits.</li>
+                    <li>Use digits 1-9: You may only use numbers from 1 to 9 in the grid. </li>
+                    <li>No repeats in rows: Each horizontal row must contain each digit from 1 to 9 exactly once. </li>
+                    <li>No repeats in columns: Each vertical column must contain each digit from 1 to 9 exactly once.
+                    </li>
+                    <li>No repeats in 3x3 boxes: The 9x9 grid is divided into nine 3x3 boxes. Each of these boxes must
+                        also
+                        contain each digit from 1 to 9 exactly once. </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <div class="centerpiece">
+        <h1>Sudoku.</h1>
+    </div>
+    <div class="videoContainer">
+        <div class="video">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/8zRXDsGydeQ?si=mTOlRO2leTjX2nXi"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <div class="videoDescription">
+                <p>Watch the above video to get started!</p>
+            </div>
+            <div class="roughSummary">
+                <h3>Rough Summary</h3>
+                <p>The challenge of Sudoku is to populate an 81-cell grid that is sectioned into nine 3x3 blocks. The
+                    game’s core
+                    constraint applies equally to every horizontal row, vertical column, and 3x3 block: each must
+                    contain a complete set
+                    of the digits 1 through 9, with no number repeated. Using logic and reasoning, your goal is to
+                    deduce the single
+                    correct placement for a digit in every empty cell. The puzzle is won once the entire grid is
+                    correctly filled.</p>
+            </div>
+        </div>
+        <div class="video">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/OtKxtvMUahA?si=YwUDVVZ7axMcenDK"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <div class="videoDescription">
+                <p>Watch this video as well!</p>
+            </div>
+            <div class="roughSummary">
+                <h3>Rough Summary</h3>
+                <p>To solve a Sudoku, ensure each row, column, and 3x3 box contains the numbers 1 through 9 without any
+                    repeats.
+                    Use the "cross-hatching" technique, a process of elimination, to deduce where numbers must go based
+                    on existing
+                    placements. Work systematically through each box, repeating the process as filled squares reveal new
+                    solutions.
+                    For difficult squares, try counting through the possible numbers (1-9) to see which one is missing
+                    from the
+                    corresponding row, column, and box.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+
+</html>

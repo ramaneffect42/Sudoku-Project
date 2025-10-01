@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url("/assets/bgimage.jpeg");
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+    min-height: 100vh;
+    margin: 5px;
+    padding: 5px;
+    font-family: "Saira", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
+}
+
+
+
+.games{
+    display: flex;
+    flex-direction: row; 
+}
+
+.gamesContainer{
+    margin: 2rem;
+    padding: 10px;
+}
+
+.gamesContainer h1{
+    background-color: #a237ee;
+    background-image: linear-gradient(45deg, #8a70ef, #68e620);
+    background-size: 100%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-text-fill-color: transparent;
+    font-size: 3rem;
+}
+
+.details{
+    border: 2px solid black;
+    border-radius: 10px;
+    margin: 5px;
+    padding: 2rem;
+    font-size: 3rem;
+    box-shadow: 2px 1px 1px rgb(255, 194, 194);
+}
+
+.details img{
+    height: 400px;
+    width: 400px;
+}
+
+.details h3{
+    padding: 5px;
+    text-align: center;
+}
+
+
+
+.gamesOffered h1{
+    font-size: 4rem;
+    text-align: center;
+    padding: 5px;
+    margin: 10px;
+    background-color: #a237ee;
+    background-image: linear-gradient(45deg, #0077ff, #ff5500);
+    background-size: 100%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-text-fill-color: transparent;
+}
+
+nav{
+    width: 100%;
+    height: auto;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+nav ul{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+nav li{
+    padding: 5px;
+    margin: 5px;
+    font-size: 1.3rem;
+}
+
+nav li:first-child{
+    margin-right: auto;
+}
+
+nav li:last-child{
+    margin-left: auto;
+}
+
+nav a{
+    color: black;
+    text-decoration: none;
+}
+
+.hover-underline{
+    display: inline-block;
+    position: relative;
+}
+
+.hover-underline::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: rgb(55, 55, 55);
+    transition: transform 0.35s ease-out;
+}
+
+.hover-underline:hover::after{
+    transform: scaleX(1);
+    transform-origin: bottom center;
+}
