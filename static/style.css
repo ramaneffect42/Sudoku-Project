@@ -6,7 +6,7 @@
 }
  
 body {
-    background-image: url("/assets/bgimage.jpeg");
+    background-image: url("/Sudoku-Project/assets/bgimage.jpeg");
     background-repeat: no-repeat;
     background-position: top center;
     background-size: cover;
@@ -32,10 +32,13 @@ body {
     margin: 5px;
 }
 
-.videoContainer{
+.videoContainer {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: center; /* Centers the two video blocks relative to each other */
+    align-items: flex-start; /* Keeps items aligned to the top */
+    width: 100%; /* Ensure it spans the full width to properly center its content */
+    box-sizing: border-box; /* Include padding/border in the element's total width/height */
 }
 
 .videoDescription{
@@ -46,19 +49,44 @@ body {
     font-weight: bold;
 }
 
-.video{
+.video {
     padding: 10px;
-    margin: 10px;
+    margin: 10px 5px; 
     border: 5px solid black;
     border-radius: 10px;
+    max-width: 48%; /* Use a percentage max-width so two fit nicely side-by-side */
+    width: 100%;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    box-sizing: border-box;
 }
 
 iframe{
-    padding: 5px;
-    margin: 5px;
-    margin-left: 6.5%;
-    border-radius: 2rem;
+    border-radius: 1.5rem;
 }
+
+.video-responsive {
+    width: 100%;
+    overflow: hidden;
+    padding-top: 56.25%; /* 9 / 16 = 0.5625 (56.25%) Standard aspect ratio for yt videos*/
+    position: relative;
+    height: 0;
+}
+
+
+.video-responsive iframe {
+    border: 0;
+    height: 98%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    border-radius: 1.5rem; 
+}
+
+
 
 .bodyContent{
     display: flex;
@@ -152,54 +180,70 @@ nav{
     height: auto;
     border: 2px solid black;
     border-radius: 10px;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+}
+nav ul {
+  list-style: none;
 }
 
-nav ul{
-    list-style: none;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+nav .links{
+  display: flex;
+  justify-content: center;
+}
+nav li {
+  font-size: 1.5rem;
+  padding: 0 1em;
+  margin-bottom: 8px;
 }
 
-nav li{
-    padding: 5px;
-    margin: 5px;
-    font-size: 1.3rem;
-}
-
-nav li:first-child{
-    margin-right: auto;
+nav li:first-child {
+  margin-right: auto;
 }
 
 nav li:last-child{
     margin-left: auto;
 }
 
-nav a{
-    color: black;
-    text-decoration: none;
+
+nav a {
+  color: black;
+  text-decoration: none;
 }
 
-.hover-underline{
-    display: inline-block;
-    position: relative;
+.hover-underline {
+  display: inline-block;
+  position: relative;
 }
 
-.hover-underline::after{
-    content: '';
-    position: absolute;
-    width: 100%;
-    transform: scaleX(0);
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: rgb(55, 55, 55);
-    transition: transform 0.35s ease-out;
+.hover-underline::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: rgb(55, 55, 55);
+  transition: transform 0.35s ease-out;
 }
 
-.hover-underline:hover::after{
-    transform: scaleX(1);
-    transform-origin: bottom center;
+.hover-underline:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom center;
+}
+
+@media screen and (max-width: 981px) {
+    .bodyContent{
+        flex-direction: column;
+        align-items: center;
+    }
+    .videoContainer{
+        flex-direction: column;
+        width: 100%;
+    }
+    .video{
+        max-width: 950%;
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -209,17 +253,10 @@ nav a{
     }
     .videoContainer{
         flex-direction: column;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .bodyContent{
-        flex-direction: column;
-        align-items: center;
-    }
-    .videoContainer{
-        flex-direction: column;
         width: fit-content;
+    }
+    iframe{
+        width: 100%;
     }
     .rules-section{
         display: flex;
@@ -241,4 +278,76 @@ nav a{
     }
 }
 
+.menu-btn{
+    margin-left: auto;
+}
+
+.sidebar{
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    z-index: 999;
+    background-color: rgba(255, 255, 255, 0.089);
+    backdrop-filter: blur(10px);
+    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.3);
+    display: none;
+    flex-direction: column;
+    align-items: flex-start; /*align-items aligns the items along the horizontal axis.*/
+    justify-content: flex-start; /*justify-content - the items along the vertical axis.*/   
+}
+
+.sidebar li{
+    padding: 10px;
+    margin: 10px; 
+    width: 100%;
+}
+
+.sidebar a{
+    width: 100%;
+}
+
+.menu-btn{
+    display: none;
+}
+
+
+@media(max-width: 800px){
+    .hideOnMobile{
+        display: none;
+    }
+    .menu-btn{
+        display: block;
+    }
+    .sidebar a{
+        color: rgb(0, 0, 0);
+    }
+}
+ 
+@media(max-width: 470px){
+    .sidebar{
+        width: 100%;
+        height: 100%;
+    }
+
+    .sidebar a{
+        color: black;
+        padding: 2px;  
+        height: 20%;
+        font-size: 1.5em;
+    }
+}
+
+
+.close-btn {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: inherit;
+    cursor: pointer;
+}
 
