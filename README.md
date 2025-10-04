@@ -7,3 +7,5 @@ It showcases multiple skills like:
 4. Built with Basic Accessibility Features
 5. Deployment on Vercel (free tier)
 
+When Building this project, i first started making it as a desktop first project then started adding the media queries to make it responsive for mobile devices, however i have since learned that you can make the design mobile first then expand to desktop screen sizes. (max-width vs mi-width)
+

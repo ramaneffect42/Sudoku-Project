@@ -6,7 +6,7 @@
 }
 
 body {
-    background-image: url("/assets/bgimage.jpeg");
+    background-image: url("/Sudoku-Project/assets/bgimage.jpeg");
     background-repeat: no-repeat;
     background-position: top center;
     background-size: cover;
@@ -114,52 +114,129 @@ nav{
     height: auto;
     border: 2px solid black;
     border-radius: 10px;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+}
+nav ul {
+  list-style: none;
 }
 
-nav ul{
-    list-style: none;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+nav .links{
+  display: flex;
+  justify-content: center;
+}
+nav li {
+  font-size: 1.5rem;
+  padding: 0 1em;
+  margin-bottom: 8px;
 }
 
-nav li{
-    padding: 5px;
-    margin: 5px;
-    font-size: 1.3rem;
-}
-
-nav li:first-child{
-    margin-right: auto;
+nav li:first-child {
+  margin-right: auto;
 }
 
 nav li:last-child{
     margin-left: auto;
 }
 
-nav a{
-    color: black;
-    text-decoration: none;
+
+nav a {
+  color: black;
+  text-decoration: none;
 }
 
-.hover-underline{
-    display: inline-block;
-    position: relative;
+.hover-underline {
+  display: inline-block;
+  position: relative;
 }
 
-.hover-underline::after{
-    content: '';
-    position: absolute;
+.hover-underline::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: rgb(55, 55, 55);
+  transition: transform 0.35s ease-out;
+}
+
+.hover-underline:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom center;
+}
+
+
+.menu-btn{
+    margin-left: auto;
+}
+
+.sidebar{
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    z-index: 999;
+    background-color: rgba(255, 255, 255, 0.089);
+    backdrop-filter: blur(10px);
+    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.3);
+    display: none;
+    flex-direction: column;
+    align-items: flex-start; /*align-items aligns the items along the horizontal axis.*/
+    justify-content: flex-start; /*justify-content - the items along the vertical axis.*/   
+}
+
+.sidebar li{
+    padding: 10px;
+    margin: 10px; 
     width: 100%;
-    transform: scaleX(0);
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: rgb(55, 55, 55);
-    transition: transform 0.35s ease-out;
 }
 
-.hover-underline:hover::after{
-    transform: scaleX(1);
-    transform-origin: bottom center;
+.sidebar a{
+    width: 100%;
 }
+
+.menu-btn{
+    display: none;
+}
+
+
+@media(max-width: 800px){
+    .hideOnMobile{
+        display: none;
+    }
+    .menu-btn{
+        display: block;
+    }
+    .sidebar a{
+        color: rgb(0, 0, 0);
+    }
+}
+ 
+@media(max-width: 470px){
+    .sidebar{
+        width: 100%;
+        height: 100%;
+    }
+
+    .sidebar a{
+        color: black;
+        padding: 2px;  
+        height: 20%;
+        font-size: 1.5em;
+    }
+}
+
+
+.close-btn {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: inherit;
+    cursor: pointer;
+}
+
