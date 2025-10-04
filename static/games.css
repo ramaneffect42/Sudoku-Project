@@ -25,6 +25,7 @@ body {
 .games {
     display: flex;
     flex-direction: row;
+    width: 100%;
 }
 
 .gamesContainer {
@@ -45,6 +46,10 @@ body {
 }
 
 .details {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
     border: 2px solid black;
     border-radius: 10px;
     margin: 5px;
@@ -63,8 +68,6 @@ body {
     padding: 5px;
     text-align: center;
 }
-
-
 
 .gamesOffered h1 {
     font-size: 4rem;
@@ -139,22 +142,42 @@ nav a {
 }
 
 
-@media (max-width: 854px) {
+@media (max-width: 1140px) {
     .games {
         flex-direction: column;
+        width: 95%;
+        justify-content: center;
+    }
+    .gamesContainer{
+        width: 98%;
+        margin: 2px;
+        padding: 2px;
     }
 
     .details img {
-        height: 14rem;
-        width: 14rem;
+        height: 12rem;
+        width: 12rem;
         padding: 0;
         margin: 0;
         overflow: clip;
     }
 
+    .details {
+    width: 100%;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin: 5px;
+    padding: 1rem;
+    font-size: 3rem;
+    box-shadow: 2px 1px 1px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
 }
 
-
+}
 
 .menu-btn{
     margin-left: auto;

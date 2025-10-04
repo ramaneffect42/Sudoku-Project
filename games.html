@@ -1,15 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Other Games Offered!</title>
     <link rel="stylesheet" href="./static/games.css">
 </head>
+
 <body>
     <nav>
         <ul class="sidebar">
-            <li onclick=closeSidebar()><a href="javascript:void(0);"><svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="#000000"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
+            <li onclick=closeSidebar()><a href="javascript:void(0);"><svg xmlns="http://www.w3.org/2000/svg"
+                        height="32px" viewBox="0 -960 960 960" width="32px" fill="#000000">
+                        <path
+                            d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+                    </svg></a></li>
             <div>
                 <li><a href="/index.html" class="hover-underline">Home</a></li>
             </div>
@@ -62,41 +68,50 @@
                 </li>
             </div>
             <div class="links">
-                    <div>
-                        <li class="hideOnMobile"><a href="/index.html" class="hover-underline">Home</a></li>
-                    </div>
-                    <div>
-                        <li class="hideOnMobile"><a href="/games.html" class="hover-underline">Other Games</a></li>
-                    </div>
-                    <div>
-                        <li class="hideOnMobile"><a href="/about.html" class="hover-underline">About</a></li>
-                    </div>
-                    <div class="menu-btn">
-                        <li onclick=showSidebar()>
-                            <a href="javascript:void(0);">
-                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
-                            </a>
-                        </li>
-                    </div>
+                <div>
+                    <li class="hideOnMobile"><a href="/index.html" class="hover-underline">Home</a></li>
+                </div>
+                <div>
+                    <li class="hideOnMobile"><a href="/about.html" class="hover-underline">About</a></li>
+                </div>
+                <div>
+                    <li class="hideOnMobile"><a href="/contact.html" class="hover-underline">Contact</a></li>
+                </div>
+                <div class="menu-btn">
+                    <li onclick=showSidebar()>
+                        <a href="javascript:void(0);">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                                fill="#000000">
+                                <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
+                            </svg>
+                        </a>
+                    </li>
+                </div>
             </div>
         </ul>
     </nav>
     <div class="gamesOffered">
         <h1>We plan to make other games as well.</h1>
     </div>
-     <div class="gamesContainer">
+    <div class="gamesContainer">
         <div class="games">
             <div class="details">
                 <h3>Chess</h3>
-                <img src="./assets/Chess_Board.svg" alt="image of a chessboard">
+                <div class="game-image">
+                    <img src="./assets/Chess_Board.svg" alt="image of a chessboard">
+                </div>
             </div>
             <div class="details">
                 <h3>Checkers</h3>
-                <img src="./assets/Checkers.png" alt="image of a checkers board">
+                <div class="game-image">
+                    <img src="./assets/Checkers.png" alt="image of a checkers board">
+                </div>
             </div>
             <div class="details">
-                <h3>4x4 Sudoku</h3>   
-                <img src="./assets/4x4Sudoku.png" alt="image of a 4x4 sudoku grid">   
+                <h3>4x4 Sudoku</h3>
+                <div class="game-image">
+                    <img src="./assets/4x4Sudoku.png" alt="image of a 4x4 sudoku grid">
+                </div>
             </div>
         </div>
     </div>
@@ -104,4 +119,5 @@
 
     <script src="index.js"></script>
 </body>
+
 </html>
