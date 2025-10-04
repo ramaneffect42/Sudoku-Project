@@ -2,6 +2,15 @@
 <html lang="en">
 
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7DEQ9T1XGP"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-7DEQ9T1XGP');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Me!</title>
@@ -25,12 +34,12 @@
                 message: document.getElementById("message").value
             }
             emailjs.send("service_g61daxa", "template_39xpk1m", params)
-                .then(function(response) {
+                .then(function (response) {
                     console.log('SUCCESS!', response.status, response.text);
                     alert("Email has been sent successfully!");
 
                     document.getElementById("contactForm").reset();
-                }, function(error) {
+                }, function (error) {
                     console.log('FAILED...', error);
                     alert("Failed to send email. Please try again.");
                 });
@@ -41,7 +50,11 @@
 <body>
     <nav>
         <ul class="sidebar">
-            <li onclick=closeSidebar()><a href="javascript:void(0);"><svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="#000000"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
+            <li onclick=closeSidebar()><a href="javascript:void(0);"><svg xmlns="http://www.w3.org/2000/svg"
+                        height="32px" viewBox="0 -960 960 960" width="32px" fill="#000000">
+                        <path
+                            d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+                    </svg></a></li>
             <div>
                 <li><a href="./index.html" class="hover-underline">Home</a></li>
             </div>
@@ -94,22 +107,25 @@
                 </li>
             </div>
             <div class="links">
-                    <div>
-                        <li class="hideOnMobile"><a href="./index.html" class="hover-underline">Home</a></li>
-                    </div>
-                    <div>
-                        <li class="hideOnMobile"><a href="./games.html" class="hover-underline">Other Games</a></li>
-                    </div>
-                    <div>
-                        <li class="hideOnMobile"><a href="./about.html" class="hover-underline">About</a></li>
-                    </div>
-                    <div class="menu-btn">
-                        <li onclick=showSidebar()>
-                            <a href="javascript:void(0);">
-                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
-                            </a>
-                        </li>
-                    </div>
+                <div>
+                    <li class="hideOnMobile"><a href="./index.html" class="hover-underline">Home</a></li>
+                </div>
+                <div>
+                    <li class="hideOnMobile"><a href="./games.html" class="hover-underline">Other Games</a></li>
+                </div>
+                <div>
+                    <li class="hideOnMobile"><a href="./about.html" class="hover-underline">About</a></li>
+                </div>
+                <div class="menu-btn">
+                    <li onclick=showSidebar()>
+                        <a href="javascript:void(0);">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                                fill="#000000">
+                                <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
+                            </svg>
+                        </a>
+                    </li>
+                </div>
             </div>
         </ul>
     </nav>
